@@ -25,9 +25,12 @@ body {
   text-align: center;
   margin-top: 20px;
   cursor: pointer;
-  transition: opacity 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .explore:hover {
   opacity: 0.7;  /* Hover effect */
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
