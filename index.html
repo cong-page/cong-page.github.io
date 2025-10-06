@@ -1,17 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-       
+
     <meta name="description" content="this is a personal website">
     <title>Page</title>
 </head>
+
 <body>
     <div class="welcome">Welcome :)</div>
-    <div class="explore">Explore ></div>
-    
-    <script src="script.js"></script> 
+    <!-- <div class="explore">Explore ></div> -->
+    <a href="#" class="explore" onclick="openAboutModal(); return false;">Explore →</a>
+
+    <!-- about modal -->
+    <div id="aboutModal" class="about-modal">
+        <button class="close-panel-btn" onclick="closeAboutModal()">×</button>
+        <div class="about-me">
+            <h2>About</h2>
+            <div class="cover-letter">
+                <p>Hello!</p>
+                <br>
+                <p>Thanks for visiting this page. To know more, peruse the buttons below.</p>
+                <br>
+                <p>Best,<br><strong>C O</strong></p>
+            </div>
+
+            <button class="button" onclick="openModal('credentialsModal')">View My Credentials</button>
+            <button class="button contact-btn" onclick="openModal('contactModal')">Contact Me</button>
+        </div>
+    </div>
+
+    <!-- modal overlay -->
+    <div id="modalOverlay" class="modal-overlay" onclick="closeAllModals()"></div>
+
+    <!-- creds modal -->
+    <div id="credentialsModal" class="modal">
+        <button class="close-modal-btn" onclick="closeModal('credentialsModal')">×</button>
+        <h3>My Credentials</h3>
+
+        <div class="credentials-section">
+            <h4>Education</h4>
+            <p><strong>Bachelor of Science in FT</strong><br>
+                UP, 2009-2014<br>
+            </p>
+        </div>
+
+        <div class="credentials-section">
+            <h4>Technical Skills</h4>
+            <ul>
+                <li><strong>Languages:</strong> JavaScript, Python, Java, HTML/CSS, SQL</li>
+                <li><strong>Frameworks:</strong> React, Node.js, Express, Django</li>
+                <li><strong>Tools:</strong> Git, Docker, AWS, Linux</li>
+                <li><strong>Databases:</strong> PostgreSQL, MongoDB, MySQL</li>
+            </ul>
+        </div>
+
+        <div class="credentials-section">
+            <h4>Work Experience</h4>
+            <p><strong>SQA</strong><br>
+                *---, 2021-Present<br>
+                • Developed and maintained web applications using modern technologies<br>
+                • Collaborated with cross-functional teams to deliver projects on time<br>
+                • Implemented best practices for code quality and testing</p>
+        </div>
+
+        <div class="credentials-section">
+            <h4>Licenses & Certifications</h4>
+            <ul>
+                <li>Professional Food Technologist License - PRC (Philippines) - 2023</li>
+            </ul>
+        </div>
+
+        <a href="https://github.com/cong-page" class="github-link" target="_blank">🔗 View My GitHub
+            Profile</a>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <button class="close-modal-btn" onclick="closeModal('contactModal')">×</button>
+        <h3>Contact Me</h3>
+
+        <div class="contact-info">
+            <p><strong>Email:</strong> christineong909@gmail.com</p>
+            <p><strong>Discord:</strong> tin09</p>
+            <p><strong>LinkedIn:</strong> linkedin.com/in/christine-ong-3331b5115</p>
+            <p><strong>Location:</strong> Quezon City, PH</p>
+            <br>
+            <p>Feel free to reach out to me through any of these channels. I'm always open to discussing new
+                opportunities, collaborations, or just having a chat about technology!</p>
+            <br>
+            <p>I typically respond within 24-48 hours.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
