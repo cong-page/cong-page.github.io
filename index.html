@@ -12,10 +12,12 @@
 
 <body>
     <div class="welcome">Welcome :)</div>
-    <!-- <div class="explore">Explore ></div> -->
     <a href="#" class="explore" onclick="openAboutModal(); return false;">Explore →</a>
 
-    <!-- about modal -->
+    <!-- Modal overlay -->
+    <div id="modalOverlay" class="modal-overlay"></div>
+
+    <!-- About modal -->
     <div id="aboutModal" class="about-modal">
         <button class="close-panel-btn" onclick="closeAboutModal()">×</button>
         <div class="about-me">
@@ -33,10 +35,7 @@
         </div>
     </div>
 
-    <!-- modal overlay -->
-    <div id="modalOverlay" class="modal-overlay" onclick="closeAllModals()"></div>
-
-    <!-- creds modal -->
+    <!-- Credentials modal -->
     <div id="credentialsModal" class="modal">
         <button class="close-modal-btn" onclick="closeModal('credentialsModal')">×</button>
         <h3>My Credentials</h3>
@@ -74,8 +73,7 @@
             </ul>
         </div>
 
-        <a href="https://github.com/cong-page" class="github-link" target="_blank">🔗 View My GitHub
-            Profile</a>
+        <a href="https://github.com/cong-page" class="github-link" target="_blank">🔗 View My GitHub Profile</a>
     </div>
 
     <!-- Contact Modal -->
@@ -87,12 +85,12 @@
             <p><strong>Email:</strong> christineong909@gmail.com</p>
             <p><strong>Discord:</strong> tin09</p>
             <p><strong>LinkedIn:</strong> linkedin.com/in/christine-ong-3331b5115</p>
-            <p><strong>Location:</strong> Quezon City, PH</p>
+            <p><strong>Location:</strong> Metro Manila, PH</p>
             <br>
-            <p>Feel free to reach out to me through any of these channels. I'm always open to discussing new
-                opportunities, collaborations, or just having a chat about technology!</p>
+            <!-- <p>Feel free to reach out to me through any of these channels. I'm always open to discussing new
+                opportunities, collaborations, or just having a chat about technology!</p> -->
             <br>
-            <p>I typically respond within 24-48 hours.</p>
+            <p>Don't hesitate to reach out. I typically respond within 24-48 hours.</p>
         </div>
     </div>
 
