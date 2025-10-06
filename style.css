@@ -1,19 +1,33 @@
 body {
   background-color: black;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;   /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* Centers vertically */
+  align-items: center;   /* Centers horizontally */
 }
 
 .welcome {
   color: white;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: bold;
   text-align: center;
-  margin-top: 20%;
+  margin-bottom: 10px;
 }
 
 .explore {
   color: white;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: bold;
   text-align: center;
   margin-top: 20px;
   cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.explore:hover {
+  opacity: 0.7;  /* Hover effect */
 }
