@@ -230,17 +230,17 @@
 
         /* Only affects Credentials modal */
         .credentials-modal .credentials-section {
-          font-size: 14px;
+          font-size: 12px;
         }
 
         .credentials-modal h3 {
-          font-size: 20px;
+          font-size: 18px;
         }
 
         .credentials-modal h4 {
-          font-size: 16px;
+          font-size: 14px;
         }
 
         .credentials-modal .credentials-section li {
-          font-size: 14px;
+          font-size: 12px;
         }
