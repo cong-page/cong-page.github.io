@@ -227,3 +227,20 @@
         .close-modal-btn:hover {
           color: #666;
         }
+
+        /* Only affects Credentials modal */
+        .credentials-modal .credentials-section {
+          font-size: 14px;
+        }
+
+        .credentials-modal h3 {
+          font-size: 20px;
+        }
+
+        .credentials-modal h4 {
+          font-size: 16px;
+        }
+
+        .credentials-modal .credentials-section li {
+          font-size: 14px;
+        }
