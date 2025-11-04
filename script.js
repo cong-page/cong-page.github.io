@@ -47,3 +47,16 @@ function updateClock() {
 
 updateClock();
 setInterval(updateClock, 1000);
+
+
+// ADD RECAPTCHA
+document.getElementById("contactBtn").addEventListener("click", function () {
+    // Open a temporary CAPTCHA modal
+    document.getElementById("captchaModal").style.display = "block";
+});
+
+function onCaptchaSuccess() {
+    // This is called automatically when the user passes the CAPTCHA
+    document.getElementById("captchaModal").style.display = "none";
+    openContactModal(); // <-- your existing modal open function
+}

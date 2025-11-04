@@ -109,6 +109,11 @@
         <a href="https://github.com/cong-page" class="github-link" target="_blank">🔗 View My GitHub Profile</a>
     </div>
 
+    <!-- CAPTCHA Modal -->
+    <div id="captchaModal" style="display:none;">
+        <div class="g-recaptcha" data-sitekey="6LdQswEsAAAAAPMlT22jss9iQSj5yimmmceTSGYL" data-callback="onCaptchaSuccess"></div>
+    </div>
+
     <!-- Contact Modal -->
     <div id="contactModal" class="modal">
         <button class="close-modal-btn" onclick="closeModal('contactModal')">×</button>
@@ -130,7 +135,11 @@
         </div>
     </div>
 
+
+    
     <script src="script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </body>
 
 </html>
