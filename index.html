@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <meta name="description" content="this is a personal website">
     <title>Page</title>
 </head>
@@ -35,7 +35,9 @@
             </div>
 
             <button class="button" onclick="openModal('credentialsModal')">View My Credentials</button>
-            <button class="button contact-btn" onclick="openModal('contactModal')">Contact Me</button>
+            <!-- <button class="button contact-btn" onclick="openModal('contactModal')">Contact Me</button> -->
+            <button class="button contact-btn" onclick="openContactWithCaptcha()">Contact Me</button>
+            <!-- <button onclick="openContactWithCaptcha()">Contact</button> -->
         </div>
     </div>
 
@@ -109,9 +111,14 @@
         <a href="https://github.com/cong-page" class="github-link" target="_blank">🔗 View My GitHub Profile</a>
     </div>
 
-    <!-- CAPTCHA Modal -->
-    <div id="captchaModal" style="display:none;">
-        <div class="g-recaptcha" data-sitekey="6LdQswEsAAAAAPMlT22jss9iQSj5yimmmceTSGYL" data-callback="onCaptchaSuccess"></div>
+    <!-- reCAPTCHA Modal (appears before contact modal) -->
+    <div id="recaptchaModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Please verify you're human</h3>
+            <div class="g-recaptcha" data-sitekey="6LdQswEsAAAAAPMlT22jss9iQSj5yimmmceTSGYL"></div>
+            <button onclick="verifyAndOpenContact()">Continue</button>
+            <button onclick="closeRecaptchaModal()">Cancel</button>
+        </div>
     </div>
 
     <!-- Contact Modal -->
@@ -126,19 +133,16 @@
                     target="_blank">tin09</a></p>
             <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/christine-ong-3331b5115"
                     target="_blank">christine-ong-3331b5115</a></p>
+            <p><strong>Phone:</strong> <i>Available upon request.</i></p>
             <p><strong>Location:</strong> Metro Manila, PH</p>
             <br>
             <!-- <p>Feel free to reach out to me through any of these channels. I'm always open to discussing new
                 opportunities, collaborations, or just having a chat about technology!</p> -->
-            <br>
             <p>Don't hesitate to reach out. I typically respond within 24-48 hours.</p>
         </div>
     </div>
 
-
-    
     <script src="script.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </body>
 

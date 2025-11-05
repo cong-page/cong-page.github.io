@@ -50,13 +50,48 @@ setInterval(updateClock, 1000);
 
 
 // ADD RECAPTCHA
-document.getElementById("contactBtn").addEventListener("click", function () {
-    // Open a temporary CAPTCHA modal
-    document.getElementById("captchaModal").style.display = "block";
-});
+//document.getElementById("contactBtn").addEventListener("click", function () {
+// Open a temporary CAPTCHA modal
+//    document.getElementById("captchaModal").style.display = "block";
+//});
 
-function onCaptchaSuccess() {
-    // This is called automatically when the user passes the CAPTCHA
-    document.getElementById("captchaModal").style.display = "none";
-    openContactModal(); // <-- your existing modal open function
+//function onCaptchaSuccess() {
+// This is called automatically when the user passes the CAPTCHA
+//    document.getElementById("captchaModal").style.display = "none";
+//    openContactModal(); // <-- your existing modal open function
+//}
+
+// When contact button is clicked in About modal
+function openContactWithCaptcha() {
+    // Show reCAPTCHA modal
+    document.getElementById('recaptchaModal').style.display = 'block';
+}
+
+// Verify and open contact modal
+function verifyAndOpenContact() {
+    const response = grecaptcha.getResponse();
+
+    if (response.length === 0) {
+        alert('Please complete the reCAPTCHA');
+        return;
+    }
+
+    // Close reCAPTCHA modal
+    closeRecaptchaModal();
+
+    // Open your contact modal
+    openContactModal();
+
+    // Reset reCAPTCHA for next time
+    grecaptcha.reset();
+}
+
+function closeRecaptchaModal() {
+    document.getElementById('recaptchaModal').style.display = 'none';
+    grecaptcha.reset();
+}
+
+// Your existing contact modal function
+function openContactModal() {
+    document.getElementById('contactModal').style.display = 'block';
 }
