@@ -52,14 +52,14 @@ setInterval(updateClock, 1000);
 // ADD RECAPTCHA
 // When contact button is clicked in About modal
 function openContactWithCaptcha() {
-    // First, hide the about modal (but keep overlay)
+    // Hide About modal but keep overlay visible
     document.getElementById('aboutModal').classList.remove('active');
+    document.getElementById('modalOverlay').classList.add('active');
 
     // Show reCAPTCHA modal
-    document.getElementById('recaptchaModal').style.display = 'block';
+    document.getElementById('recaptchaModal').classList.add('active');
 }
 
-// Verify and open contact modal
 function verifyAndOpenContact() {
     const response = grecaptcha.getResponse();
 
@@ -69,9 +69,9 @@ function verifyAndOpenContact() {
     }
 
     // Hide reCAPTCHA modal
-    document.getElementById('recaptchaModal').style.display = 'none';
+    document.getElementById('recaptchaModal').classList.remove('active');
 
-    // Show contact modal (same way credentials shows)
+    // Show contact modal
     document.getElementById('contactModal').classList.add('active');
 
     // Reset reCAPTCHA for next time
@@ -80,8 +80,7 @@ function verifyAndOpenContact() {
 
 function closeRecaptchaModal() {
     // Hide reCAPTCHA modal
-    document.getElementById('recaptchaModal').style.display = 'none';
-
+    document.getElementById('recaptchaModal').classList.remove('active');
     // Show about modal again
     document.getElementById('aboutModal').classList.add('active');
 

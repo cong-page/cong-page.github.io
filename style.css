@@ -278,3 +278,7 @@
           font-size: 10px;
           opacity: 0.9;
         }
+
+        #recaptchaModal.active {
+          display: block;
+        }
