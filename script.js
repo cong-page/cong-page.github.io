@@ -52,9 +52,9 @@ setInterval(updateClock, 1000);
 // ADD RECAPTCHA
 // When contact button is clicked in About modal
 function openContactWithCaptcha() {
-    // Show reCAPTCHA modal (using your existing modal system)
+    // Hide about modal, show reCAPTCHA modal (keep overlay active)
     document.getElementById('aboutModal').classList.remove('active');
-    document.getElementById('recaptchaModal').classList.add('active');
+    document.getElementById('recaptchaModal').style.display = 'block';
 }
 
 // Verify and open contact modal
@@ -67,17 +67,17 @@ function verifyAndOpenContact() {
     }
     
     // Close reCAPTCHA modal
-    document.getElementById('recaptchaModal').classList.remove('active');
+    document.getElementById('recaptchaModal').style.display = 'none';
     
-    // Open contact modal using your existing system
-    document.getElementById('contactModal').classList.add('active');
+    // Open contact modal using the SAME method as credentials
+    openModal('contactModal');
     
     // Reset reCAPTCHA for next time
     grecaptcha.reset();
 }
 
 function closeRecaptchaModal() {
-    document.getElementById('recaptchaModal').classList.remove('active');
+    document.getElementById('recaptchaModal').style.display = 'none';
     document.getElementById('aboutModal').classList.add('active');
     grecaptcha.reset();
 }
