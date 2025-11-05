@@ -283,6 +283,11 @@
           display: block;
         }
 
+        .grecaptcha-badge {
+          bottom: 80px !important;
+          right: 20px !important;
+        }
+
 
         /* .visitor-counter {
           font-size: 8px;

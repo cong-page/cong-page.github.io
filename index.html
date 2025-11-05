@@ -37,8 +37,12 @@
 
             <button class="button" onclick="openModal('credentialsModal')">View My Credentials</button>
             <!-- <button class="button contact-btn" onclick="openModal('contactModal')">Contact Me</button> -->
-            <button class="button contact-btn" onclick="openContactWithCaptcha()">Contact Me</button>
+            <!-- <button class="button contact-btn" onclick="openContactWithCaptcha()">Contact Me</button> -->
             <!-- <button onclick="openContactWithCaptcha()">Contact</button> -->
+            <button class="button g-recaptcha" data-sitekey="6Lf25wIsAAAAAAyJ_UqgQmJAqSOMNDOQJbNmvNXk"
+                data-callback="onCaptchaSuccess" data-action="contact">
+                Contact Me
+            </button>
         </div>
     </div>
 

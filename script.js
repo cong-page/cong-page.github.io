@@ -97,3 +97,13 @@ function closeRecaptchaModal() {
 
     grecaptcha.reset();
 }
+
+function onCaptchaSuccess(token) {
+    // User passed reCAPTCHA, now open the contact modal
+    document.getElementById('aboutModal').classList.remove('active');
+    document.getElementById('modalOverlay').classList.add('active');
+    document.getElementById('contactModal').classList.add('active');
+
+    // Optional: reset it for next time
+    grecaptcha.reset();
+}
