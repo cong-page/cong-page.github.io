@@ -282,3 +282,11 @@
         #recaptchaModal.active {
           display: block;
         }
+
+
+        .visitor-counter {
+          font-size: 10px;
+          opacity: 0.9;
+          margin-top: 5px;
+          color: #ddd;
+        }

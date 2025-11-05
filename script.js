@@ -48,6 +48,16 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 1000);
 
+// --- Visitor Counter (CountAPI) ---
+const counterId = 'christineong-website'; // use your own unique ID or domain name
+fetch(`https://api.countapi.xyz/hit/${counterId}/visits`)
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('visitor-count').textContent = data.value;
+    })
+    .catch(() => {
+        document.getElementById('visitor-count').textContent = 'Error';
+    });
 
 // ADD RECAPTCHA
 // When contact button is clicked in About modal
