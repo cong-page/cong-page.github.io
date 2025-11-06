@@ -316,7 +316,7 @@ body {
 }
 
 /* Target all possible reCAPTCHA elements */
-iframe[src*="recaptcha"] {
+iframe[src*="recaptcha"][src*="anchor"] {
   display: none !important;
 }
 
