@@ -53,6 +53,13 @@ fetch(`https://api.countapi.xyz/hit/${counterId}/visits`)
 
 // reCAPTCHA callback - called when user completes the captcha
 function onCaptchaSuccess(token) {
+    // Make sure about modal is closed
     document.getElementById('aboutModal').classList.remove('active');
+    // Make sure overlay stays active
+    document.getElementById('modalOverlay').classList.add('active');
+    // Open contact modal
     document.getElementById('contactModal').classList.add('active');
-}
+    // Reset reCAPTCHA for next use
+    if (typeof grecaptcha !== 'undefined') {
+        grecaptcha.reset();
+    }
