@@ -280,6 +280,7 @@ body {
 
 /* HIDE RECAPTCHA BADGE - This fixes the floating box issue */
 .grecaptcha-badge {
-  visibility: hidden;
-  opacity: 0;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  display: none !important;
 }
