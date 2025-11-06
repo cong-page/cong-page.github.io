@@ -63,3 +63,4 @@ function onCaptchaSuccess(token) {
     if (typeof grecaptcha !== 'undefined') {
         grecaptcha.reset();
     }
+}
