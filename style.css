@@ -252,7 +252,7 @@ body {
 /* Clock at bottom center with background */
 .clock-container {
   position: fixed;
-  bottom: 30px;
+  bottom: 35px; /* was 30px */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
