@@ -296,7 +296,7 @@ body {
   text-align: center;
   line-height: 1.4;
   z-index: 5;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .recaptcha-disclaimer a {
@@ -308,79 +308,86 @@ body {
   opacity: 0.8;
 }
 
-/* HIDE RECAPTCHA BADGE - This fixes the floating box issue */
-.grecaptcha-badge {
-  visibility: hidden !important;
-  opacity: 0 !important;
-  display: none !important;
-}
-
-/* Target all possible reCAPTCHA elements */
-iframe[src*="recaptcha"][src*="anchor"] {
-  display: none !important;
-}
-
-div[style*="position: fixed"]>div>iframe[src*="recaptcha"] {
-  display: none !important;
-}
-
-
-/* CATS MODAL */
-/* Cats Modal (fixed, centered, no resizing of images) */
-.cats-modal {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.97);
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6);
-  z-index: 1002;
-  text-align: center;
-  width: auto;
-  /* fit content width */
-  height: auto;
-  /* fit content height */
-}
-
-.cats-modal.active {
-  display: block;
-}
-
-.cats-modal h3 {
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.cats-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-}
-
-.cats-container img {
-  width: 250px;
-  /* fixed width — won’t resize */
-  height: auto;
-  /* keeps natural proportions */
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  object-fit: cover;
-}
-
-.cat-name {
-  margin-top: 8px;
-  font-weight: bold;
-  color: #444;
-}
-
-/* Prevent modal from shifting on small screens */
-@media (max-width: 600px) {
-  .cats-container {
-    flex-direction: column;
-    gap: 15px;
+/* Media query for short screens - move clock below content */
+@media (max-height: 400px) {
+  body {
+    justify-content: flex-start;
+    padding-top: 50px;
   }
-}
+
+  /* HIDE RECAPTCHA BADGE - This fixes the floating box issue */
+  .grecaptcha-badge {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    display: none !important;
+  }
+
+  /* Target all possible reCAPTCHA elements */
+  iframe[src*="recaptcha"][src*="anchor"] {
+    display: none !important;
+  }
+
+  div[style*="position: fixed"]>div>iframe[src*="recaptcha"] {
+    display: none !important;
+  }
+
+
+  /* CATS MODAL */
+  /* Cats Modal (fixed, centered, no resizing of images) */
+  .cats-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.97);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6);
+    z-index: 1002;
+    text-align: center;
+    width: auto;
+    /* fit content width */
+    height: auto;
+    /* fit content height */
+  }
+
+  .cats-modal.active {
+    display: block;
+  }
+
+  .cats-modal h3 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .cats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .cats-container img {
+    width: 250px;
+    /* fixed width — won’t resize */
+    height: auto;
+    /* keeps natural proportions */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+  }
+
+  .cat-name {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #444;
+  }
+
+  /* Prevent modal from shifting on small screens */
+  @media (max-width: 600px) {
+    .cats-container {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
