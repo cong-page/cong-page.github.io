@@ -47,6 +47,23 @@
                 data-callback="onCaptchaSuccess" data-action="contact">
                 Contact Me
             </button>
+            <button class="button" onclick="openModal('catsModal')">View My Cats</button>
+        </div>
+    </div>
+
+    <!-- Cats modal -->
+    <div id="catsModal" class="modal cats-modal">
+        <button class="close-modal-btn" onclick="closeModal('catsModal')">×</button>
+        <h3>My Cats</h3>
+        <div class="cats-container">
+            <div class="cat">
+                <img src="cat1.jpg" alt="Molli">
+                <p class="cat-name">Molli</p>
+            </div>
+            <div class="cat">
+                <img src="cat2.jpg" alt="Manju">
+                <p class="cat-name">Manju</p>
+            </div>
         </div>
     </div>
 
