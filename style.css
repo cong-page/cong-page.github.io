@@ -278,9 +278,48 @@ body {
   opacity: 0.9;
 }
 
+.visitor-counter {
+  font-size: 10px;
+  opacity: 0.8;
+  margin-top: 8px;
+  color: #ddd;
+}
+
+.recaptcha-disclaimer {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  opacity: 0.6;
+  color: #999;
+  text-align: center;
+  max-width: 400px;
+  line-height: 1.4;
+  z-index: 5;
+}
+
+.recaptcha-disclaimer a {
+  color: #999;
+  text-decoration: underline;
+}
+
+.recaptcha-disclaimer a:hover {
+  opacity: 0.8;
+}
+
 /* HIDE RECAPTCHA BADGE - This fixes the floating box issue */
 .grecaptcha-badge {
   visibility: hidden !important;
   opacity: 0 !important;
+  display: none !important;
+}
+
+/* Target all possible reCAPTCHA elements */
+iframe[src*="recaptcha"] {
+  display: none !important;
+}
+
+div[style*="position: fixed"]>div>iframe[src*="recaptcha"] {
   display: none !important;
 }

@@ -40,19 +40,19 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 1000);
 
+// Visitor Counter using CountAPI
+const counterId = 'christineong-website';
+fetch(`https://api.countapi.xyz/hit/${counterId}/visits`)
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('visitor-count').textContent = data.value;
+    })
+    .catch(() => {
+        document.getElementById('visitor-count').textContent = 'N/A';
+    });
+
 // reCAPTCHA callback - called when user completes the captcha
 function onCaptchaSuccess(token) {
     document.getElementById('aboutModal').classList.remove('active');
     document.getElementById('contactModal').classList.add('active');
 }
-
-// Add this to your script section
-window.addEventListener('load', function () {
-    setTimeout(function () {
-        const badge = document.querySelector('.grecaptcha-badge');
-        if (badge) {
-            badge.style.display = 'none';
-            badge.parentElement.style.display = 'none';
-        }
-    }, 1000);
-});
