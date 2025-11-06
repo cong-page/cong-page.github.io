@@ -45,3 +45,14 @@ function onCaptchaSuccess(token) {
     document.getElementById('aboutModal').classList.remove('active');
     document.getElementById('contactModal').classList.add('active');
 }
+
+// Add this to your script section
+window.addEventListener('load', function () {
+    setTimeout(function () {
+        const badge = document.querySelector('.grecaptcha-badge');
+        if (badge) {
+            badge.style.display = 'none';
+            badge.parentElement.style.display = 'none';
+        }
+    }, 1000);
+});
