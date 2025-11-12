@@ -40,16 +40,17 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 1000);
 
+// THIS IS OUTDATED-NOT WORKING
 // Visitor Counter using CountAPI
-const counterId = 'christineong-website';
-fetch(`https://api.countapi.xyz/hit/${counterId}/visits`)
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('visitor-count').textContent = data.value;
-    })
-    .catch(() => {
-        document.getElementById('visitor-count').textContent = 'N/A';
-    });
+// const counterId = 'christineong-website';
+// fetch(`https://api.countapi.xyz/hit/${counterId}/visits`)
+//     .then(response => response.json())
+//     .then(data => {
+//         document.getElementById('visitor-count').textContent = data.value;
+//     })
+//     .catch(() => {
+//         document.getElementById('visitor-count').textContent = 'N/A';
+//     });
 
 // reCAPTCHA callback - called when user completes the captcha
 function onCaptchaSuccess(token) {
