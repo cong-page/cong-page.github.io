@@ -252,7 +252,8 @@ body {
 /* Clock at bottom center with background */
 .clock-container {
   position: fixed;
-  bottom: 35px; /* was 30px */
+  bottom: 35px;
+  /* was 30px */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -383,4 +384,15 @@ div[style*="position: fixed"]>div>iframe[src*="recaptcha"] {
     flex-direction: column;
     gap: 15px;
   }
+}
+
+/* mobile image disable */
+img {
+  -webkit-touch-callout: none;
+  /* Disable iOS callout */
+  pointer-events: none;
+  /* Disable all pointer events */
+  -webkit-user-drag: none;
+  /* Disable drag on Safari */
+  user-drag: none;
 }

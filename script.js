@@ -64,3 +64,26 @@ function onCaptchaSuccess(token) {
         grecaptcha.reset();
     }
 }
+
+
+// this is to disable touch-save on mobile
+// Disable long-press context menu on mobile
+document.addEventListener('touchstart', function (event) {
+    if (event.target.tagName === 'IMG') {
+        event.preventDefault();
+    }
+}, { passive: false });
+
+// Prevent image drag on mobile
+document.addEventListener('touchmove', function (event) {
+    if (event.target.tagName === 'IMG') {
+        event.preventDefault();
+    }
+}, { passive: false });
+
+// Disable iOS callout (long-press menu)
+document.addEventListener('touchend', function (event) {
+    if (event.target.tagName === 'IMG') {
+        event.preventDefault();
+    }
+}, { passive: false });
