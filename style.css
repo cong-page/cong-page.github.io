@@ -327,7 +327,7 @@ div[style*="position: fixed"]>div>iframe[src*="recaptcha"] {
 
 
 /* CATS MODAL */
-/* Cats Modal (fixed, centered, no resizing of images) */
+/* Cats Modal (fixed, centered, responsive but modest sizing) */
 .cats-modal {
   display: none;
   position: fixed;
@@ -341,37 +341,33 @@ div[style*="position: fixed"]>div>iframe[src*="recaptcha"] {
   z-index: 1002;
   text-align: center;
   width: auto;
-  /* fit content width */
   height: auto;
-  /* fit content height */
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
 }
-
 .cats-modal.active {
   display: block;
 }
-
 .cats-modal h3 {
   margin-bottom: 20px;
   color: #333;
 }
-
 .cats-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
-
 .cats-container img {
-  width: 250px;
-  /* fixed width — won’t resize */
+  width: clamp(250px, 22vw, 320px);
+  /* scales with viewport, floor 250px (current size), ceiling 320px */
   height: auto;
-  /* keeps natural proportions */
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   object-fit: cover;
 }
-
 .cat-name {
   margin-top: 8px;
   font-weight: bold;
